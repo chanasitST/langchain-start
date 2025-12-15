@@ -1,6 +1,6 @@
 from typing import Literal
 from langgraph.graph import StateGraph, START, END
-from .state import AgentState, InputState, OutputState
+from state import AgentState, InputState, OutputState
 
 # --- nodes ---
 

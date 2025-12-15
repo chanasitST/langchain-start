@@ -14,3 +14,4 @@ langchain-community
 langchain-experimental
 langgraph-checkpoint-sqlite
 streamlit
+langgraph-cli

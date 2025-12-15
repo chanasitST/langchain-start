@@ -1,4 +1,4 @@
-from day_01_brain.agent import app
+from agent01.agent import app
 
 def run_agent(question: str):
     print(f"\n👤 User: {question}")

@@ -1,6 +1,8 @@
 .env
 .env.bak
 
+.pckl
+
 # Python
 __pycache__/
 *.py[cod]
