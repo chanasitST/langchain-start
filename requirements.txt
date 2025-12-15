@@ -1,0 +1,16 @@
+langchain-core
+langchain-openai
+langchain-anthropic
+langgraph
+pydantic
+chromadb
+tiktoken
+python-dotenv
+beautifulsoup4
+pypdf
+faiss-cpu
+rank_bm25
+langchain-community
+langchain-experimental
+langgraph-checkpoint-sqlite
+streamlit
