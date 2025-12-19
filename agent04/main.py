@@ -5,6 +5,5 @@ from agent03.chunking.chunker import chunk_documents
 from agent03.chunking.retriever import create_hybrid_retriever
 from agent04.explainer import generate_explanation
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 load_dotenv()
