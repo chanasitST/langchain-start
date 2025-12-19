@@ -2,6 +2,7 @@
 .env.bak
 
 .pckl
+.langgraph_api/
 
 # Python
 __pycache__/

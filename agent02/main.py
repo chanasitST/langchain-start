@@ -1,4 +1,4 @@
-# import os
+import os
 from loader import DocumentLoader
 
 def read_text_from_path(path: str):
