@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from agent05.models import Quiz
 
-def generate_quiz(topic: str, retrievers: BaseRetriever = None) -> Quiz:
+def generate_quiz(topic: str, retriever: BaseRetriever = None) -> Quiz:
     """_summary_
     Generates a quiz for a given topic using RAG (optional) and structured output.
 
@@ -17,7 +17,8 @@ def generate_quiz(topic: str, retrievers: BaseRetriever = None) -> Quiz:
     print(f"Generating quiz for topic: {topic}")
 
     context = ""
-    if retrievers:
+
+    if retriever:
         # Step 1 Retrieve relevant chunks from the retriever
         print("--- Retrieving relevant context ---")
         docs = retriever.invoke(topic)
@@ -50,3 +51,12 @@ def generate_quiz(topic: str, retrievers: BaseRetriever = None) -> Quiz:
     llm = ChatOpenAI(model_name="gpt-4.1-mini", temperature=0)
     structured_llm = llm.with_structured_output(Quiz)
     # https://docs.langchain.com/oss/python/langchain/structured-output
+
+    # Step 5 create chain -> prompt template -> llm with structured output
+    chain = prompt | structured_llm
+
+    # Step 6 generate quiz by invoking the llm
+    print("--- Generating quiz ---")
+    quiz = chain.invoke({"context": context, "topic": topic})
+
+    return quiz
